@@ -1,6 +1,6 @@
 {
   "name": "bitpost",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Wrapper for the bitpost API",
   "dependencies": {
     "sync-request": "^6.1.0"
