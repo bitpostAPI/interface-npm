@@ -8,4 +8,3 @@ The code is distributed mostly for demo purposes, don't use it on production wit
 * [API documentation](https://docs.bitpost.co)
 * [OpenAPI reference](https://apidocs.bitpost.co)
 * [Code examples](https://github.com/bitpostAPI/examples)
-* [Source code of this module](https://github.com/bitpostAPI/interface-npm)
