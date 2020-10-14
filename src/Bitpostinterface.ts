@@ -100,7 +100,7 @@ export class BitpostRequest {
     
     if(printAfter){
       console.log('status code=' + response.statusCode)
-      console.log(this.answer)
+      console.log(JSON.stringify(this.answer))
     }
     
     return this.answer;
