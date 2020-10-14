@@ -87,14 +87,14 @@ var BitpostRequest = /** @class */ (function () {
         }
         var response = request('POST', this.baseURL + '/request', { qs: queryString, body: JSON.stringify(this.rawTxs) });
         try {
-            this.answer = JSON.parse(response.getBody('utf-8'));
+            this.answer = JSON.parse(Buffer.from(response.body, 'utf-8').toString());
         }
         catch (_a) { }
         if (response.statusCode < 400)
             this.id = this.answer['data']['id'];
         if (printAfter) {
             console.log('status code=' + response.statusCode);
-            console.log(this.answer);
+            console.log(JSON.stringify(this.answer));
         }
         return this.answer;
     };

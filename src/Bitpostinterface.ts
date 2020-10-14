@@ -94,7 +94,7 @@ export class BitpostRequest {
     
     let response = request('POST', this.baseURL + '/request', {qs: queryString, body: JSON.stringify(this.rawTxs)})
     try{
-      this.answer = JSON.parse(response.getBody('utf-8'))
+      this.answer = JSON.parse(Buffer.from(response.body,'utf-8').toString())
     } catch{}
     if(response.statusCode < 400) this.id = this.answer['data']['id']
     
