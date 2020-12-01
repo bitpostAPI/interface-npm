@@ -1,6 +1,6 @@
 {
   "name": "bitpost",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Wrapper for the bitpost API",
   "dependencies": {
     "sync-request": "^6.1.0"
@@ -12,7 +12,7 @@
   },
   "author": "Pedro FR",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "dist/send-once-testnet.js",
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",

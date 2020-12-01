@@ -31,7 +31,8 @@ export class BitpostInterface {
 
   public getFeerates({maxFeerate, size=50, target=null, canReduceFeerate=true}:
     {maxFeerate: number, size?: number, target?: number, canReduceFeerate?: boolean}): Array<number>{
-      let parameters: Object = {maxfeerate: maxFeerate, size: size, canreducefee: canReduceFeerate}
+      let adjustedSize: number = Math.min(size, Math.floor(maxFeerate))
+      let parameters: Object = {maxfeerate: maxFeerate, size: adjustedSize, canreducefee: canReduceFeerate}
       if(target) parameters['target'] = target
       let response = request('GET', this.baseURL + '/feerateset', {qs: parameters})
       if(response.statusCode >= 400) throw "Failed to get feerates!"

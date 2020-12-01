@@ -32,7 +32,8 @@ var BitpostInterface = /** @class */ (function () {
     };
     BitpostInterface.prototype.getFeerates = function (_a) {
         var maxFeerate = _a.maxFeerate, _b = _a.size, size = _b === void 0 ? 50 : _b, _c = _a.target, target = _c === void 0 ? null : _c, _d = _a.canReduceFeerate, canReduceFeerate = _d === void 0 ? true : _d;
-        var parameters = { maxfeerate: maxFeerate, size: size, canreducefee: canReduceFeerate };
+        var adjustedSize = Math.min(size, Math.floor(maxFeerate));
+        var parameters = { maxfeerate: maxFeerate, size: adjustedSize, canreducefee: canReduceFeerate };
         if (target)
             parameters['target'] = target;
         var response = request('GET', this.baseURL + '/feerateset', { qs: parameters });
