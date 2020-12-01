@@ -1,6 +1,9 @@
 # Purpose
 This module wraps the bitpost API so that it's easier to experiment and play with.
 
+# Install
+`npm i bitpost`
+
 # Disclaimer
 The code is distributed mostly for demo purposes, don't use it on production without proper review. Beware: HTTP requests are done synchronously!
 
